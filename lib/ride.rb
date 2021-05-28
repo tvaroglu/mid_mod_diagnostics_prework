@@ -17,4 +17,8 @@ class Ride
     return ((adults.length.to_f / self.passengers.length.to_f) * 100).round
   end
 
+  def total_passengers
+    return self.passengers.length
+  end
+
 end
