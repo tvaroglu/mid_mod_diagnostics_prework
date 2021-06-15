@@ -8,11 +8,7 @@ class Person
   end
 
   def adult?
-    if self.age >= 18
-      return true
-    else
-      return false
-    end
+    @age >= 18
   end
 
   def pep_talk
