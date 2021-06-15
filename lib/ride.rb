@@ -9,16 +9,17 @@ class Ride
   end
 
   def add_passenger(passenger)
-    self.passengers << passenger if passenger.class == Person
+    @passengers << passenger if passenger.class == Person
   end
 
   def percentage_adults
-    adults = self.passengers.select { |passenger| passenger.adult? }
-    return ((adults.length.to_f / self.passengers.length.to_f) * 100).round
+    adults = @passengers.select { |passenger| passenger.adult? }
+    ((adults.length / @passengers.length.to_f) * 100).round
   end
 
-  def total_passengers
-    return self.passengers.length
+  def percentage_sick_passengers
+    sick_passengers = @passengers.select { |passenger| passenger.intensity_max < @intensity }
+    ((sick_passengers.length / @passengers.length.to_f) * 100).round
   end
 
 end
